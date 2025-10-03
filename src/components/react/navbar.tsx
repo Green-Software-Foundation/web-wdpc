@@ -8,8 +8,11 @@ import {
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { useState } from "react";
 
 const NavigationComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  
   const navigationItems = [
     { href: "#overview", label: "Overview" },
     { href: "#why-matters", label: "Why WDPC Matters" },
@@ -38,7 +41,7 @@ const NavigationComponent = () => {
 
       {/* Mobile hamburger menu */}
       <div className="lg:hidden">
-        <Sheet>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button variant="outline" className="p-2 text-gray-darker">
               <Menu className="size-2" />
@@ -51,6 +54,7 @@ const NavigationComponent = () => {
                   key={item.href}
                   href={item.href}
                   className="px-2 py-2 text-2xl font-semibold text-primary-darker"
+                  onClick={() => setIsOpen(false)}
                 >
                   {item.label}
                 </a>
