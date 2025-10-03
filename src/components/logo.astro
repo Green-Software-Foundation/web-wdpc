@@ -1,3 +1,28 @@
+---
+import { Client } from '@notionhq/client';
+import {
+  getSecret
+} from 'astro:env/server'
+const databaseId = getSecret('NOTION_MEMBERS_DATABASE_ID');
+const apiKey =  getSecret('NOTION_TOKEN');
+console.log(databaseId, apiKey);
+if (databaseId && apiKey) {
+  const notion = new Client({
+  auth: apiKey,
+})
+  try {
+    const data = await notion.dataSources.query({
+      data_source_id: databaseId,
+    });
+    console.log("[Notion] Members DB query result:", data);
+  } catch (error) {
+    console.error("[Notion] Query failed", error);
+  }
+} else {
+  console.warn("[Notion] Missing NOTION_MEMBERS_DATABASE_ID or API key env var");
+}
+---
+
 <section class="pb-12 md:pb-16 lg:pb-20">
   <div class="relative container overflow-hidden">
     <h1 class="mb-6 text-center text-base font-medium md:mb-8">
