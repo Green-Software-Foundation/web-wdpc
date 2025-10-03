@@ -1,0 +1,130 @@
+---
+import GridIcon from "@/assets/grid-stability-icon.svg";
+import CO2Icon from "@/assets/co2-icon.svg";
+import CostIcon from "@/assets/cost-icon.svg";
+import HeatIcon from "@/assets/heat-icon.svg";
+import InfraIcon from "@/assets/infra-icon.svg";
+
+import WhyWdpcBackgroundIcon from "@/assets/why-wdpc-background.svg";
+
+const whyWDPCFeatures = [
+  {
+    icon: GridIcon,
+    description: `<span class="font-extrabold">Grid Stability</span> enables load forecasting and demand response that prevents costly disruptions`,
+  },
+  {
+    icon: CO2Icon,
+    description: `<span class="font-extrabold">Carbon Optimization</span> schedules workloads to run when renewable energy is abundant`,
+  },
+  {
+    icon: CostIcon,
+    description: `<span class="font-extrabold">Cost Reduction</span> participates in energy markets and dynamic pricing programs`,
+  },
+  {
+    icon: HeatIcon,
+    description: `<span class="font-extrabold">Heat Recovery</span> coordinates waste heat delivery to municipal heating systems`,
+  },
+  {
+    icon: InfraIcon,
+    description: `<span class="font-extrabold">Infrastructure Efficiency</span> improves utilization through predictive workload signaling`,
+  },
+];
+---
+
+<!-- Why SOFT Matters -->
+<section id="why-matters" class="py-12 md:py-16 lg:py-20">
+  <div class="container mx-auto max-w-3xl text-center">
+    <h1 class="mb-3 text-2xl font-semibold md:mb-4 md:text-3xl lg:text-4xl">
+      Why
+      <span class="font-bold text-primary">WDPC</span>
+      Matters
+    </h1>
+    <p class="text-xl">
+      The rapid growth of artificial intelligence (AI) and machine learning (ML) is creating
+      unprecedented challenges for our energy infrastructure and unique opportunities for
+      innovation.
+    </p>
+  </div>
+</section>
+
+<!-- Industry Impact -->
+<section class="py-8 md:py-10 lg:py-12">
+  <div class="container">
+    <div class="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
+      <div>
+        <h1 class="mb-2 text-2xl font-semibold text-primary md:text-3xl">Industry Impact</h1>
+        <p>
+          The computational demands of modern architecture are becoming increasingly volatile. A
+          single large language model training session can cause power fluctuations that would have
+          been unimaginable just years ago. WDPC addresses this critical challenge by providing the
+          data foundation that enables facilities to participate in energy markets, demand response
+          programs, and renewable energy optimization.
+          <br />
+          <br />
+          Going beyond managing today's workloads, it helps build the infrastructure for a future where
+          computation and sustainability are inseparable. By standardizing how workloads communicate
+          with infrastructure, WDPC transforms isolated data centers into participants in a coordinated,
+          efficient energy ecosystem.
+        </p>
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="/assets/why-wdpc-feat-1.svg" class="shrink-0 object-cover" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Business Benefits -->
+<section class="py-8 md:py-10 lg:py-12">
+  <div class="container">
+    <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-x-20">
+      <div class="order-2 md:order-1">
+        <img src="/assets/why-wdpc-feat-2.svg" class="object-cover" />
+      </div>
+      <div class="order-1 md:order-2">
+        <h1 class="mb-3 text-2xl font-semibold text-primary md:mb-4 md:text-3xl">
+          Business Benefits
+        </h1>
+        <div class="grid grid-cols-1 gap-x-6 gap-y-8 py-2">
+          {
+            whyWDPCFeatures.map((feature) => (
+              <div class="flex items-start justify-start gap-3">
+                <div class="relative flex w-16 items-center justify-center p-3">
+                  <feature.icon class="relative h-8 w-8" />
+                  <WhyWdpcBackgroundIcon class="absolute inset-0 size-full" />
+                </div>
+                <p set:html={feature.description} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Environmental Impact -->
+<section class="py-8 md:py-10 lg:py-12">
+  <div class="container">
+    <div class="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
+      <div>
+        <h1 class="mb-2 text-2xl font-semibold text-primary md:text-3xl">Environmental Impact</h1>
+        <p>
+          <span class="font-extrabold"> WDPC</span> converts environmental responsibility from aspiration
+          into an achievable reality. By making carbon intensity visible and actionable at millisecond
+          scales, organizations can automatically shift computational workloads to times when clean energy
+          is abundant.
+          <br />
+          <br />
+          The framework enables data centers to become active participants in the renewable energy transition,
+          coordinating with grid operators to maximize the use of solar and wind power while maintaining
+          the performance that modern applications demand. Reimagine how computation and energy work
+          together.
+        </p>
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="/assets/why-wdpc-feat-3.svg" class="shrink-0 object-cover" />
+      </div>
+    </div>
+  </div>
+</section>

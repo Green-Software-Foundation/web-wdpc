@@ -1,0 +1,40 @@
+---
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import LeadingIcon from "@/assets/leading-icon.svg";
+---
+
+<section class="py-12 md:py-16 lg:py-20">
+  <div class="container">
+    <div class="grid auto-cols-fr grid-cols-1 justify-between gap-5 lg:grid-cols-2 lg:gap-6">
+      <div class="relative flex flex-col justify-between rounded-2xl border p-6 md:p-8">
+        <img src="/assets/leading-decor.svg" class="absolute top-0 right-0" />
+
+        <div>
+          <LeadingIcon />
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold md:text-3xl lg:text-4xl">Leading The Charge</h2>
+          <p class="mt-2 text-xl">Project Leadership</p>
+          <p class="mt-2 text-xl">
+            My Truong | CTO, Zutacore | Project Lead | Hardware Standards Working Group
+          </p>
+          <Badge className="mt-2"> Actively recruiting contributors </Badge>
+          <p class="mt-4">
+            We're building this standard with input from data center operators, infrastructure
+            providers, and sustainability experts worldwide. Your expertise can help shape how the
+            industry coordinates energy for decades to come.
+          </p>
+          <div class="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
+            <a href="#get-involved">
+              <Button> Get Involved </Button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="/assets/leading-illustration.svg" class="rounded-2xl object-cover" />
+      </div>
+    </div>
+  </div>
+</section>

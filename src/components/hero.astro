@@ -1,0 +1,45 @@
+---
+import { Button } from "@/components/ui/button";
+---
+
+<section id="overview" class="py-12 md:py-18 lg:py-20">
+  <div class="container">
+    <div class="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
+      <div>
+        <h1 class="text-3xl font-extrabold md:text-4xl lg:text-5xl">
+          Intelligent Coordination for
+          <span class="text-primary">Sustainable Computing</span>
+        </h1>
+        <h6 class="mt-3 text-2xl font-bold text-black md:mt-4">
+          Optimize energy use, support grid stability, and maximize renewables while scaling
+          sustainably.
+        </h6>
+        <p class="mt-5 text-lg font-normal md:mt-6 md:text-xl lg:text-2xl">
+          An AI training run can cause power swings over 200mw in 40ms, like a quarter-million
+          people joining the grid. Without standardized communication between workloads and
+          infrastructure, these swings destabilize power systems and waste renewable energy.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-4 md:mt-8">
+          <Button> <a href="#get-involved"> Get Involved </a> </Button>
+          <Button variant="outline"> <a href="#why-matters"> Explore the Vision </a> </Button>
+        </div>
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="/assets/hero-illustration.svg" class="shrink-0 object-cover" />
+      </div>
+    </div>
+    <div class="mt-28 hidden lg:flex lg:items-center lg:justify-center">
+      <canvas id="hero-decor" style="width: 36px; height: 70px;"></canvas>
+    </div>
+  </div>
+</section>
+<script>
+  import { DotLottie } from "@lottiefiles/dotlottie-web";
+
+  const dotLottie = new DotLottie({
+    autoplay: true,
+    loop: true,
+    canvas: document.querySelector("#hero-decor") as HTMLCanvasElement,
+    src: "/assets/hero-decor.lottie",
+  });
+</script>

@@ -1,0 +1,87 @@
+---
+import DiveIcon1 from "@/assets/dive-icon-1.svg";
+import DiveIcon2 from "@/assets/dive-icon-2.svg";
+import DiveIcon3 from "@/assets/dive-icon-3.svg";
+import DiveIcon4 from "@/assets/dive-icon-4.svg";
+import ExternalLinkIcon from "@/assets/external-link-icon.svg";
+
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+
+const whyWDPCFeatures = [
+  {
+    icon: DiveIcon1,
+    title: "Contribute to the Project",
+    description:
+      "Work on the WDPC codebase—open issues, submit PRs, and collaborate on implementation.",
+    buttonLink: "https://github.com/Green-Software-Foundation/Workload-Dynamic-Power-and-Cooling/",
+    buttonText: "View Repository",
+    badge: "GSF Members Only",
+  },
+  {
+    icon: DiveIcon2,
+    title: "Shape the Specification",
+    description:
+      "Review the WDPC spec draft and data models; propose changes and provide technical feedback.",
+    buttonLink:
+      "https://github.com/Green-Software-Foundation/Workload-Dynamic-Power-and-Cooling/blob/dev/WDPC-Spec.md",
+    buttonText: "Read Specification",
+    badge: "GSF Members Only",
+  },
+  {
+    icon: DiveIcon3,
+    title: "Architecture Visualization",
+    description: "See how WDPC's central data bus architecture enables real-time coordination.",
+    buttonLink:
+      "https://github.com/Green-Software-Foundation/Workload-Dynamic-Power-and-Cooling/blob/dev/sup_files/06-Mycelium%20(1).png",
+    buttonText: "View Architecture",
+    badge: "GSF Members Only",
+  },
+  {
+    icon: DiveIcon4,
+    title: "Hardware Standards WG",
+    description:
+      "Join the working group overseeing WDPC and other hardware sustainability standards.",
+    buttonLink: "https://github.com/Green-Software-Foundation/hardware-standards-wg",
+    buttonText: "Join Working Group",
+    badge: "GSF Members Only",
+  },
+];
+---
+
+<section id="resources" class="py-12 md:py-18 lg:py-20">
+  <div class="container">
+    <h1 class="text-center text-2xl font-semibold md:text-3xl lg:text-4xl">Dive Deeper</h1>
+    <div
+      class="mt-8 grid grid-cols-1 items-center justify-center gap-12 md:mt-10 lg:grid-cols-2 lg:gap-x-20"
+    >
+      <div class="order-2 flex w-full items-center justify-center md:order-1 lg:justify-start">
+        <img src="/assets/dive-illustration.svg" class="object-cover" />
+      </div>
+      <div class="order-1 md:order-2">
+        <div class="grid grid-cols-1">
+          {
+            whyWDPCFeatures.map((feature) => (
+              <div class="flex flex-col items-start justify-start border-b border-primary-light/50 py-4 last:border-b-0">
+                <div class="flex w-full items-center justify-start">
+                  <div class="flex w-full items-center justify-center gap-3">
+                    <feature.icon class="h-8 w-auto" />
+                    <div class="flex w-full flex-wrap items-center justify-between gap-1">
+                      <h1 class="text-xl font-bold text-primary">{feature.title}</h1>
+                      {feature.badge && <Badge>{feature.badge}</Badge>}
+                    </div>
+                  </div>
+                </div>
+                <p set:html={feature.description} class="mt-2" />
+                <Button variant="link" size="link" className="mt-3 md:mt-4 text-primary">
+                  <a href={feature.buttonLink}>{feature.buttonText}</a>
+                  <ExternalLinkIcon class="size-5" />
+                </Button>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

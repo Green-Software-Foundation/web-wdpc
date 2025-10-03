@@ -1,0 +1,80 @@
+---
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import ShapeIcon1 from "@/assets/shape-icon-1.svg";
+import ShapeIcon2 from "@/assets/shape-icon-2.svg";
+import ShapeIcon3 from "@/assets/shape-icon-3.svg";
+import ShapeIcon4 from "@/assets/shape-icon-4.svg";
+
+const waysToGetInvolved = [
+  {
+    icon: ShapeIcon1,
+    url: "https://github.com/Green-Software-Foundation/Workload-Dynamic-Power-and-Cooling/issues",
+    title: "Provide Feedback",
+    description: "Review the current specification and share your insights on GitHub",
+    buttonText: "Apply now",
+  },
+  {
+    icon: ShapeIcon2,
+    url: "https://github.com/Green-Software-Foundation/hardware-standards-wg",
+    title: "Join the Working Group",
+    description: "Collaborate with industry leaders shaping this standard",
+    buttonText: "Subscribe",
+  },
+  {
+    icon: ShapeIcon3,
+    url: "https://greensoftware.foundation/join-us",
+    title: "Become a GSF Member",
+    description: "Get full access to contribute to WDPC and other green software standards",
+    buttonText: "Provide Feedback",
+  },
+
+  {
+    icon: ShapeIcon4,
+    url: "mailto:workload-dynamic-power-cooling@greensoftware.foundation",
+    title: "Contact the Team",
+    description: "Have questions? Reach outdirectly to the WDPC team",
+    buttonText: "Become a Member",
+  },
+];
+---
+
+<section id="get-involved" class="py-12 md:py-18 lg:py-20">
+  <div class="relative container">
+    <div class="max-w-3xl">
+      <h2 class="mb-2 text-2xl font-semibold md:text-3xl lg:text-4xl">
+        Shape the Future of Sustainable Computing
+      </h2>
+      <p>
+        WDPC is a path toward intelligent energy coordination. We need diverse perspectives to
+        ensure this standard serves the entire ecosystem.
+      </p>
+    </div>
+
+    <div class="mt-6 grid grid-cols-1 gap-3 md:mt-8 md:grid-cols-2 md:gap-4 lg:grid-cols-4 relative z-10">
+      {
+        waysToGetInvolved.map((way, index) => (
+          <Card className="flex size-full flex-col items-center justify-between p-4">
+            <div>
+              <way.icon class="h-10 w-auto" />
+              <div class="my-3 border border-primary-lighter/20 md:my-4" />
+              <h2 class="mb-2 text-xl font-bold text-primary">{way.title}</h2>
+              <p>{way.description}</p>
+            </div>
+            <div class="mt-6 flex w-full items-start justify-start">
+              <a href={way.url} class="w-full">
+                <Button variant="outline" className="w-full">
+                  {way.buttonText}
+                </Button>
+              </a>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+    <img
+      class="absolute top-[5.5%] right-[1.5%] hidden px-[5%] lg:block z-0"
+      src="/assets/shape-decor.svg"
+    />
+  </div>
+</section>

@@ -1,0 +1,75 @@
+---
+import CoordinateIcon from "@/assets/transforming-icon-1.svg";
+import GridIcon from "@/assets/transforming-icon-2.svg";
+import MunicipalIcon from "@/assets/transforming-icon-3.svg";
+import CarbonIcon from "@/assets/transforming-icon-4.svg";
+import { cn } from "@/lib/utils";
+
+const features = [
+  {
+    Icon: CoordinateIcon,
+    title: "Coordinate AI Model Training",
+    description:
+      "Schedule compute-heavy tasks when renewable energy is abundant, with workloads signaling power needs in advance.",
+  },
+  {
+    Icon: GridIcon,
+    title: "Grid Stability Support",
+    description:
+      "Help grid operators forecast demand and participate in energy management programs through standardized interfaces.",
+  },
+  {
+    Icon: MunicipalIcon,
+    title: "Municipal Heat Recovery",
+    description:
+      "Redirect data center heat to district heating networks, turning excess thermal energy into a community resource.",
+  },
+  {
+    Icon: CarbonIcon,
+    title: "Carbon-Aware Computing",
+    description:
+      "Schedule workloads based on grid carbon intensity, optimizing tasks to use cleaner energy.",
+  },
+];
+---
+
+<section id="what-becomes-possible" class="py-12 md:py-18 lg:py-20">
+  <div class="container">
+    <h1 class="text-2xl font-semibold md:text-3xl lg:text-4xl">Transforming Industries</h1>
+    <p class="mt-2 text-lg lg:text-xl">
+      <span class="font-bold">WDPC</span> is a catalyst for transformation across industries.
+    </p>
+    <div
+      class="mt-8 grid grid-cols-1 items-stretch justify-start border-0 border-primary-light/50 md:mt-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:border-l"
+    >
+      {
+        features.map((feature, index) => {
+          const Icon = feature.Icon;
+          const isFirst = index === 0;
+          const isSecond = index === 1;
+          const isThird = index === 2;
+          const isLast = index === features.length - 1;
+
+          return (
+            <div
+              class={cn(
+                "flex flex-col border-b border-primary-light/50 py-5 last:border-b-0 md:border-b-0 md:py-0",
+                isFirst && "md:border-b md:pb-6 lg:border-r lg:border-b-0 lg:px-6 lg:pb-0",
+                isSecond &&
+                  "md:border-b md:border-l md:pb-6 md:pl-6 lg:border-r lg:border-b-0 lg:border-l-0 lg:px-6 lg:pb-0",
+                isThird && "md:pt-6 lg:border-r lg:px-6 lg:pt-0",
+                isLast && "md:border-l md:pt-6 md:pl-6 lg:border-r-0 lg:border-l-0 lg:pt-0"
+              )}
+            >
+              <div class="mb-2 md:mb-3">
+                <Icon />
+              </div>
+              <h3 class="mb-2 text-lg font-semibold text-primary lg:text-xl">{feature.title}</h3>
+              <p class="text-sm lg:text-base">{feature.description}</p>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
