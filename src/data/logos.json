@@ -20,11 +20,6 @@
     "website": "about.google"
   },
   {
-    "name": "Intel",
-    "logo": "/assets/logos/intel.svg",
-    "website": "intel.com"
-  },
-  {
     "name": "Microsoft",
     "logo": "/assets/logos/microsoft.webp",
     "website": "microsoft.com"
@@ -96,7 +91,7 @@
   },
   {
     "name": "Envite",
-    "logo": "/assets/logos/envite.png",
+    "logo": "/assets/logos/envite.svg",
     "website": "https://envite.de/"
   },
   {
@@ -111,7 +106,7 @@
   },
   {
     "name": "GitLab",
-    "logo": "/assets/logos/gitlab.png",
+    "logo": "/assets/logos/gitlab.svg",
     "website": "https://about.gitlab.com/"
   },
   {
