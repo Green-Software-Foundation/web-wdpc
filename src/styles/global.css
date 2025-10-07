@@ -48,7 +48,7 @@
     }
   }
 
-  --animate-marquee: marquee 20s linear infinite;
+  --animate-marquee: marquee 40s linear infinite;
   @keyframes marquee {
     from {
       transform: translateX(0);
