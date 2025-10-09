@@ -6,9 +6,12 @@ interface Logo {
 }
 
 const logos: Logo[] = (await import("../data/logos.json")).default;
+
+// --animate-marquee: marquee {logos.length * 4}s linear infinite;
+const marqueeDuration = logos.length * 3;
 ---
 
-<section class="pb-12 md:pb-16 lg:pb-20">
+<section class="pb-12 md:pb-16 lg:pb-20" style={`--marquee-duration: ${marqueeDuration}s`}>
   <div class="relative container overflow-hidden">
     <h1 class="mb-6 text-center text-base font-medium md:mb-8">
       Building the future of intelligent energy coordination

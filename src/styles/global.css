@@ -48,7 +48,7 @@
     }
   }
 
-  --animate-marquee: marquee 100s linear infinite;
+
   @keyframes marquee {
     from {
       transform: translateX(0);
@@ -58,6 +58,7 @@
     }
   }
 
+  --animate-marquee: marquee var(--marquee-duration, 60s) linear infinite;
   --animate-tabs: tabs 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   @keyframes tabs { 0% { opacity: 0; } 100% { opacity: 1; } }
 }

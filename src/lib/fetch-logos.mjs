@@ -111,9 +111,9 @@ async function fetchLogos() {
       filter: {
         and: [
           {
-            property: "Paying?",
+            property: "Status",
             select: {
-              equals: "Yes",
+              equals: "Active",
             },
           },
           {
