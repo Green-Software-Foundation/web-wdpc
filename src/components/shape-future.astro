@@ -4,37 +4,28 @@ import { Button } from "@/components/ui/button";
 import ShapeIcon1 from "@/assets/shape-icon-1.svg";
 import ShapeIcon2 from "@/assets/shape-icon-2.svg";
 import ShapeIcon3 from "@/assets/shape-icon-3.svg";
-import ShapeIcon4 from "@/assets/shape-icon-4.svg";
 
 const waysToGetInvolved = [
   {
     icon: ShapeIcon1,
-    url: "https://github.com/Green-Software-Foundation/Workload-Dynamic-Power-and-Cooling/issues",
-    title: "Provide Feedback",
-    description: "Review the current specification and share your insights on GitHub",
-    buttonText: "Apply now",
-  },
-  {
-    icon: ShapeIcon2,
-    url: "https://github.com/Green-Software-Foundation/hardware-standards-wg",
-    title: "Join the Working Group",
+    url: "https://directory.greensoftware.foundation/projects/workload-dynamic-power-and-cooling-(wdpc)/",
+    title: "Join the Hardware Standards Working Group (GSF Members Only)",
     description: "Collaborate with industry leaders shaping this standard",
     buttonText: "Subscribe",
   },
   {
-    icon: ShapeIcon3,
-    url: "https://greensoftware.foundation/join-us",
-    title: "Become a GSF Member",
-    description: "Get full access to contribute to WDPC and other green software standards",
-    buttonText: "Provide Feedback",
+    icon: ShapeIcon2,
+    url: "https://github.com/Green-Software-Foundation/Workload-Dynamic-Power-and-Cooling/blob/dev/WDPC-Spec.md",
+    title: "Review the Specification (GSF Members only)",
+    description: "Review the current specification and share your insights on GitHub",
+    buttonText: "View the Specification",
   },
-
   {
-    icon: ShapeIcon4,
-    url: "mailto:workload-dynamic-power-cooling@greensoftware.foundation",
-    title: "Contact the Team",
-    description: "Have questions? Reach out directly to the WDPC team",
-    buttonText: "Become a Member",
+    icon: ShapeIcon3,
+    url: "https://share.hsforms.com/1NNvkCLgfS4GIUJ0XPH93iw4tvhy",
+    title: "Inquiry about becoming a GSF member",
+    description: "Reach out directly to the GSF team",
+    buttonText: "Get in Touch",
   },
 ];
 ---
@@ -51,7 +42,7 @@ const waysToGetInvolved = [
       </p>
     </div>
 
-    <div class="mt-6 grid grid-cols-1 gap-3 md:mt-8 md:grid-cols-2 md:gap-4 lg:grid-cols-4 relative z-10">
+    <div class="mt-6 grid grid-cols-1 gap-3 md:mt-8 md:grid-cols-2 md:gap-4 lg:grid-cols-3 relative z-10">
       {
         waysToGetInvolved.map((way, index) => (
           <Card className="flex size-full flex-col items-center justify-between p-4">

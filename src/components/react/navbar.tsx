@@ -19,7 +19,6 @@ const NavigationComponent = () => {
     { href: "#architecture-vision", label: "Explore" },
     { href: "#resources", label: "Resources" },
     { href: "#directory", label: "Directory" },
-    { href: "#get-involved", label: "Get Involved" },
   ];
 
   return (
