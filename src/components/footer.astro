@@ -113,11 +113,14 @@ const footerSections = [
                   <div class="flex gap-4">
                     {section.socialLinks.map((social) => {
                       const Icon = iconMap[social.icon as keyof typeof iconMap];
+                      const isExternal = social.href.startsWith("http");
                       return (
                         <a
                           href={social.href}
                           class="text-white/50 transition-colors hover:text-accent"
                           aria-label={social.label}
+                          target={isExternal ? "_blank" : undefined}
+                          rel={isExternal ? "noopener noreferrer" : undefined}
                         >
                           {Icon ? (
                             <Icon class="text-accent" width={20} height={20} />
@@ -128,11 +131,19 @@ const footerSections = [
                   </div>
                 </>
               ) : (
-                section.links?.map((link) => (
-                  <a href={link.href} class="text-xs text-white/50">
-                    {link.text}
-                  </a>
-                ))
+                section.links?.map((link) => {
+                  const isExternal = link.href.startsWith("http");
+                  return (
+                    <a
+                      href={link.href}
+                      class="text-xs text-white/50"
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                    >
+                      {link.text}
+                    </a>
+                  );
+                })
               )}
             </div>
           </div>

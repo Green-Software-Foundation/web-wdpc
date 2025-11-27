@@ -17,7 +17,8 @@ const waysToGetInvolved = [
     icon: ShapeIcon2,
     url: "https://github.com/Green-Software-Foundation/Workload-Dynamic-Power-and-Cooling/blob/dev/WDPC-Spec.md",
     title: "Review the Specification (GSF Members only)",
-    description: "Review the current specification and share your insights on GitHub",
+    description:
+      "Review the current specification and share your insights on GitHub",
     buttonText: "View the Specification",
   },
   {
@@ -37,12 +38,14 @@ const waysToGetInvolved = [
         Shape the Future of Sustainable Computing
       </h2>
       <p>
-        WDPC is a path toward intelligent energy coordination. We need diverse perspectives to
-        ensure this standard serves the entire ecosystem.
+        WDPC is a path toward intelligent energy coordination. We need diverse
+        perspectives to ensure this standard serves the entire ecosystem.
       </p>
     </div>
 
-    <div class="mt-6 grid grid-cols-1 gap-3 md:mt-8 md:grid-cols-2 md:gap-4 lg:grid-cols-3 relative z-10">
+    <div
+      class="mt-6 grid grid-cols-1 gap-3 md:mt-8 md:grid-cols-2 md:gap-4 lg:grid-cols-3 relative z-10"
+    >
       {
         waysToGetInvolved.map((way, index) => (
           <Card className="flex size-full flex-col items-center justify-between p-4">
@@ -53,7 +56,12 @@ const waysToGetInvolved = [
               <p>{way.description}</p>
             </div>
             <div class="mt-6 flex w-full items-start justify-start">
-              <a href={way.url} class="w-full">
+              <a
+                href={way.url}
+                class="w-full"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button variant="outline" className="w-full">
                   {way.buttonText}
                 </Button>

@@ -12,13 +12,13 @@ import { useState } from "react";
 
 const NavigationComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const navigationItems = [
     { href: "#overview", label: "Overview" },
     { href: "#why-matters", label: "Why WDPC Matters" },
     { href: "#architecture-vision", label: "Explore" },
-    { href: "#resources", label: "Resources" },
-    { href: "#directory", label: "Directory" },
+    { href: "#get-involved", label: "Resources" },
+    { href: "https://directory.greensoftware.foundation/projects/workload-dynamic-power-and-cooling-(wdpc)/", label: "Directory" },
   ];
 
   return (
@@ -27,13 +27,21 @@ const NavigationComponent = () => {
       <div className="hidden lg:block">
         <NavigationMenu className="flex justify-center">
           <NavigationMenuList className="flex flex-wrap">
-            {navigationItems.map((item) => (
-              <NavigationMenuItem key={item.href}>
-                <NavigationMenuLink href={item.href} className={navigationMenuTriggerStyle()}>
-                  {item.label}
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            ))}
+            {navigationItems.map((item) => {
+              const isExternal = item.href.startsWith("http");
+              return (
+                <NavigationMenuItem key={item.href}>
+                  <NavigationMenuLink
+                    href={item.href}
+                    className={navigationMenuTriggerStyle()}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                  >
+                    {item.label}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              );
+            })}
           </NavigationMenuList>
         </NavigationMenu>
       </div>
@@ -48,16 +56,21 @@ const NavigationComponent = () => {
           </SheetTrigger>
           <SheetContent className="overflow-y-auto">
             <nav className="mt-16 flex flex-col gap-2 p-2">
-              {navigationItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="px-2 py-2 text-2xl font-semibold text-primary-darker"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navigationItems.map((item) => {
+                const isExternal = item.href.startsWith("http");
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="px-2 py-2 text-2xl font-semibold text-primary-darker"
+                    onClick={() => setIsOpen(false)}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })}
             </nav>
           </SheetContent>
         </Sheet>
