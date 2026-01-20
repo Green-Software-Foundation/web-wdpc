@@ -6,46 +6,46 @@ import CheckIcon from "@/assets/check-icon.svg";
 const timelineItems = [
   {
     date: "May 2025",
-    description: `Proposal <br/> Vision Launced`,
+    description: "Proposal",
     icon: CheckIcon,
     start: "2024-01-01",
     end: "2024-03-31",
   },
   {
     date: "Current",
-    description: `Pre-Draft <br/>Community Shaped`,
+    description: "Pre-Draft",
     start: "2025-09-01",
     end: "2025-10-30",
   },
   {
     date: "Nov/Dec 2025",
-    description: `Draft <br/> Community Shaping`,
+    description: "Draft",
     start: "2025-11-01",
     end: "2025-12-31",
   },
   {
     date: "Upcoming",
-    description: `Consistency Review <br/> Refining Quality`,
+    description: "Consistency Review",
     start: "2026-01-01",
     end: "2026-03-31",
   },
   {
     date: "Upcoming",
-    description: `WG Final Approval <br/> Ready for Impact`,
+    description: "WG Final Approval",
     start: "2026-04-01",
     end: "2026-06-30",
   },
 
   {
     date: "Upcoming",
-    description: `SC Ratification <br/> Industry Endorsed`,
+    description: "SC Ratification",
     start: "2026-07-01",
     end: "2026-09-30",
   },
 
   {
     date: "Upcoming",
-    description: `Publication <br/> Building Tomorrow`,
+    description: "Publication",
     start: "2026-10-01",
     end: "2026-12-30",
   },
@@ -100,7 +100,7 @@ const timelineItems = [
               </div>
               <div>
                 <h3 class="mb-2 text-xl font-bold text-primary">{item.date}</h3>
-                <p set:html={item.description} class="text-sm" />
+                <p class="text-sm">{item.description}</p>
               </div>
             </li>
           ))
